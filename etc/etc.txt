@@ -1,0 +1,8 @@
+etc
+
+zip파일
+exe파일
+엑셀파일
+pdf파일
+ppt파일
+txt파일
