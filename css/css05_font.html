@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* font-family : 글꼴 */
+        div.c1{
+            font-family:궁서, 굴림, Arial, Helvetica, sans-serif;
+        }
+        div.c2{
+            /*글자 크기 : px(기본16px), pt, cm, mm, in(inch), em(상대크기 16px=1em, 32px=1em)*/
+            font-size : 1.2em;
+            /*글자 유형 : 진하게(bold), 기울임(italic), 보통(normal)*/
+            font-style : italic;
+            font-weight : 100; /*bole, 100, 200, ~800*/
+            letter-spacing : 1.5em; /* 자간*/
+        }
+        li{
+            border:1px solid #000;
+            height:100px;
+            width:400px;
+            font-size:2em;
+            text-align:center;
+            line-height:100px;
+            margin:30px;
+            /*글자에 그림자 넣기*/
+            text-shadow:-5px -5px 5px red;
+            /*박스에 그림자 넣기*/
+            box-shadow:5px 5px 5px gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1">웹문서에서 사용할 글꼴 지정</div>
+    <div class="c2">지정한 글꼴이 없을 경우에 대비해 두번째, 세번째 글꼴까지 지정</div>
+    <div class="c3">둘 이상의 글꼴 이름을 지정할 때는 쉼표(,)로 글꼴 구분</div>
+    <ul>
+        <li>Javascript</li>
+        <li>Html</li>
+        <li>Spring Framework</li>
+        <li>mybatis Framework</li>
+    </ul>
+</body>
+</html>

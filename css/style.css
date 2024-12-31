@@ -1,0 +1,25 @@
+/*외부 스타일 시트*/
+/*
+    * : 모든 태그, 모든 선택자
+*/
+*{  /*padding:0px;
+    margin:0px; */
+    font-size:10px;
+}
+
+/*스타일시트를 이용한 a태그 밑줄 없애기*/
+/*링크 스타일
+    text-decoration : 밑줄(underline), 윗줄(overline), 취소선(line-through), 없음(none)
+ 가상 클래스 */
+A:Link, A:visited{
+    color : gray;
+    text-decoration: none;
+}
+A:hover{
+    color:blue;
+    text-decoration: none;
+}
+A:active{
+    color:red;
+    text-decoration: underline;
+}
