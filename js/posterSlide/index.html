@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        #main-div{
+            width:900px; height:164px; margin:0 auto; background-color: yellow;
+        }
+        #main-div>button, #poster-view{
+            float:left; height:164px;
+        }
+        #poster-view{
+            width:841px; overflow:hidden;
+        }
+        #poster-list{
+            width:3248px; height:164px; position:relative;
+        }
+    </Style>
+    <script>
+        // #poster-list이미지 추가
+        var img = ['m01','m02','m03','m04','m05','m06','m07','m08','m09','m10','m11','m12','m13','m14','m15','m16','m17','m18','m19','m20','m21','m22','m23','m25','m26','m27','m28','m29'];
+
+        function setImage(){
+            var imgTag = "";
+            for(var i=0; i<img.length; i++){
+                imgTag += "<img src='"+img[i]+".png'/>";
+            }
+            console.log(imgTag);
+            document.getElementById("poster-list").innerHTML = imgTag;
+        }
+
+        // poster 이동할 함수
+        var x = 0;
+        var step = -5;
+        function posterMove(){
+            x = x + step; // -5 -10 -15
+            document.getElementById("poster-list").style.left = x + "px";
+            if(x<=-3248) step = 5;
+            if(x>=0) step = -5;
+        }
+
+        window.onload = function(){
+            setImage();
+            setInterval("posterMove()", 100);
+        }
+    </script>
+</head>
+<body>
+    <div id="main-div">
+        <button onclick="step=-5;">◀</button>
+        <div id="poster-view">
+            <div id="poster-list" onmouseover="clearInerterval(timer)"
+                                  onmouseout="timer=setInterval('posterMove()', 100)"></div>
+        </div>
+        <button onclick="step=5;">▶</button>
+    </div>
+</body>
+</html>
