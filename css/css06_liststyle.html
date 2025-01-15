@@ -4,43 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
         a:link, a:visited{color: #000; text-decoration: none;}
-        a:hover{color: red; text-decoration:none;}
+        a:hover{color: red; text-decoration: none;}
 
-        body,ul{margin: 0; padding:0}
-        ul{
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
             background-color: coral;
         }
-        li{
+
+        li {
             background-color: aquamarine;
+
             list-style-type: none;
-            float:left; /*박스를 왼쪽 또는 오른쪽순으로 배치*/
+
+            /* 'float: left 또는 right' = 박스를 왼쪽 또는 오른쪽부터 정렬한다. */
+            float: left;
+            
             width: 20%;
             text-align: center;
-            font-size:1.3em;
+            font-size: 1.3em;
             height: 50px;
             line-height: 50px;
         }
-        .container{
-            width: 1300px;
-            margin:0 auto;
+
+        .container {
+            width:1300px;
+            margin: 0 auto;
             background-color: gray;
         }
+
     </style>
 </head>
+
 <body>
     <ul>
-        <li><a href="#">네이버</a></li>
+        <!-- <li><a href="#"># : 임시주소(주소가 정해지지않았을 때)</a></li> -->
         <li><a href="#">네이트</a></li>
+        <li><a href="#">네이버</a></li>
         <li><a href="#">다음</a></li>
         <li><a href="#">쿠팡</a></li>
         <li><a href="#">지마켓</a></li>
     </ul>
+
     <div class="container">
-        <img src="../img/다운로드 (4).jpeg">
-        <img src="../img/다운로드 (5).jpeg">
-        <img src="../img/다운로드 (2).jpeg">
+        <img src="../image/thumb_d_AAE4763587BE8A9A0A6E8FD64B90171E.jpg">
+        <img src="../image/2870c76de5d043c54b17a76af0f0b16b.jpg">
     </div>
 </body>
 </html>

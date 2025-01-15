@@ -1,23 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
-        div{width:200px ; height: 200px;}
-        .c1{background-color: aquamarine;}
-        .c2{background-color: red;
-            /*visibility : hidden(숨김),visible(보여줌) , 원래공간을 차지한다.*/
+        div {
+            width: 200px;
+            height: 200px;
+        }
+        .c1 {background-color: rgb(195, 201, 112);}
+        .c2 {
+            background-color: rgb(117, 165, 89);
+            
+            /*visibility : hidden(숨김), visible(보임) / 생략시 default값=visible, 숨겨도 원래 공간은 차지하고 있다.*/
             visibility: hidden;
         }
-        .c3{background-color: blue;
-            /* display : none(숨김), block(보여줌), 원래공간을 반납한다. */
+        .c3 {
+            background-color: rgb(76, 78, 148);
+            
+            /*display : none(숨김), block(보임) / 생략시 default값=block, 숨기면 원래 공간은 반납되어 재정렬된다.*/
             display: none;
         }
-        .c4{background-color: black;}
+        .c4 {background-color: rgb(180, 118, 172);}
     </style>
 </head>
+
 <body>
     <div class="c1"></div>
     <div class="c2"></div>

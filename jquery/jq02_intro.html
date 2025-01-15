@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        $(function(){
+            // 아이디 선택자 "#i", 클래스 선택자 ".c" div 선택자 "div"
+            $(body).append("<div id='test'>jquery 테스트 중...</div>");
+
+            // css("속성", "속성값") : 스타일시트설정
+            $("#test").css("background-color", "yellow").css("font-size", "2em").css("color", "red");
+        });
+
+        $(function(){
+            $("body").append("<img src='../img/01.jpeg' style='width:100px; height:100px;'/>");
+        
+        // 선택자
+        // "img", "#i1", ".c1"
+        $(".c1").css("color", "red")
+        $("#i2").css("background-color", 'green');
+        $("#i2>b").css("color", "blue");
+        $("#i2 b").css("background-color", "pink");
+        $("#ii,#iii").css("background-color", "orange");
+
+        // li의 부모중에 자식노드가 1개인 부모를 선택한다.
+        $("li:only-child").css("font-size", "2em");
+        
+        // li태그의 index가 2인 태그를 선택
+        $("#m1>li").slice(2).css("background-color", "green");
+        $("m1>li").eq(4).css("color", "white");
+        // :lt, :gt
+        $("#m1>li:;t(3)").css("font-size", "3em");
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h1 class="c1" id="i1">jQuery 선택자</h1>
+        <h1 id="ii">jQuery 선택자</h1>
+        <h1 class="c1">jQuery 선택자</h1>
+        <h1 id="i2">jQuery <b>선택자</b></h1>
+        <h1 class="c1">jQuery 선택자</h1>
+        <h1 id="iii">jQuery 선택자</h1>
+    </div>
+    <div>
+        <ul id="m1">
+            <li>Menu1</li>
+            <li>Menu1</li>
+            <li>Menu1</li>
+            <li>Menu1</li>
+            <li>Menu1</li>
+            <li>Menu1</li>
+        </ul>
+        <ul id="m2">
+            <li>Menu1</li>
+        </ul>
+    </div>
+    
+</body>
+</html>

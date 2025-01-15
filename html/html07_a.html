@@ -1,50 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>앵커태그</title>
+    <title>앵커 태그</title>
 </head>
+
 <body>
-    <h1 id="top"> 같은 페이지 특정위치로 이동하기<a href="#bottom">맨아래</a></h1>
+
+    <a href="#bottom" id="top">맨아래로</a>
+    <h1>같은 페이지 특정 위치로 이동하기<br>(#(넘버사인) : id 또는 name을 표시한다.)</h1>
     <ul>
         <li><a href="#p1">HTML이란?</a></li>
         <li><a href="#p2">JavaScript란?</a></li>
         <li><a href="#p3">CSS란?</a></li>
         <li><a href="#p4">데이터베이스란?</a></li>
     </ul>
+
     <h1>텍스트에 링크 걸기</h1>
     <pre>
         a태그 : 페이지 이동
-        href: 이동할 문서의 주소
+        href : 이동할 문서의 주소
+        target="_blank" : 새로운 탭에 페이지 표시
     </pre>
     <a href="html04_img.html">글자에 링크걸기</a>
-    <a href="https://www.nate.com/">네이트</a>
-    <a href="https://sports.news.nate.com/view/20241230n00342">네이트123</a>
+    <br>
+    <a href="https://www.nate.com/">네이트(외부페이지로 링크걸기)</a>
+    <br>
+    <a href="https://view.nate.com/travel/view/277178/">여행(홈페이지의 서브페이지로 링크걸기)</a>
+    <br>
+    <a href="https://view.nate.com/travel/view/277178/" target="_blank">여행(홈페이지의 서브페이지 새탭으로 링크걸기)</a>
+    <br>
+    <!-- travel/view : 폴더명 / 277178 : 값 -->
+    <!-- 사이트의 경우 url 또는 IP -->
 
-    <h2>이미지에 링크 걸기</h2>
-    <a href="./index.html"> <img src="../img/다운로드 (2).jpeg" width="200" height="200"/></a>
-    <a href="https://www.naver.com/" target="_blank"><img src="../img/다운로드 (3).jpeg" width="200" height="200"/></a>\
+    <br>
+    <h2>이미지에 링크걸기</h2>
+    <a href="./index.html"><img src="../image\thumb_d_AAE4763587BE8A9A0A6E8FD64B90171E.jpg" width="200" height="150"></a>
+    <a href="https://www.naver.com/" target="_blank"><img src="../image\2870c76de5d043c54b17a76af0f0b16b.jpg" width="200" height="150"></a>
+    <br>
 
-    <h1>다운로드(이미지,exe,zip,txt,xls,..등)</h1>
+    <br>
+    <h1>다운로드(zip /exe /엑셀 /pdf /ppt /txt 등)</h1>
     <ol>
-        <li><a href="../img/다운로드 (6).jpeg" download>다운로드(이미지)</a></li>
-        <li><a href="../etc/06. 내장 함수(4) [변환 함수].pdf" download>pdf</a></li>
-        <li><a href="../etc/212.txt">txt</a></li>
-        <li><a href="../etc/bm3.exe">exe</a></li>
-        <li><a href="../etc/report.pptx">pptx</a></li>
-        <li><a href="../etc/test.xlsx">xlsx</a></li>
-        <li><a href="../etc/다운로드 (1).jpeg">jpeg</a></li>        
+        <li>웹으로 실행가능한 것은 다운로드가 아니라 새탭에서 실행된다.</li>
+        <li><a href="../image\1f17089c3fb0eb7316b9d3d81fb8fb8e.jpg">다운로드(img)</a></li>
+        <li><a href="../etc\01-02_웹개발시작하기.pdf">다운로드(pdf)</a></li>
+        <li><a href="../etc\Library(성광식).exe">다운로드(exe)</a></li>
+        <li><a href="../etc\mysql-connector-j-9.1.0.zip">다운로드(zip)</a></li>
+        <li><a href="../etc\report.pptx">다운로드(pptx)</a></li>
+        <li><a href="../etc\ServerSocketTest.java">다운로드(text)</a></li>
+        <li><a href="../etc\test.xlsx">다운로드(xlsx)</a></li>
+        
     </ol>
-    <hr/>
-    <a id="p1">HTML이란?</a> <br/>
-    Hyper markup language<p>   Hyper markup language<p>Hyper markup language<p>Hyper markup language<p>Hyper markup language<p>Hyper markup language<p>Hyper markup language<p>Hyper markup language<p>Hyper markup language<p>Hyper markup language<p>Hyper markup language<p>Hyper markup language<p>Hyper markup language<p>Hyper markup language<p>Hyper markup language<p></p>
-    <a id="p2">JavaScript란?</a><br/>
-    <p>자바스크립트는 둥적처리가 가능한 프론트엔드 언어이다.</p> <p>자바스크립트는 둥적처리가 가능한 프론트엔드 언어이다.</p> <p>자바스크립트는 둥적처리가 가능한 프론트엔드 언어이다.</p> <p>자바스크립트는 둥적처리가 가능한 프론트엔드 언어이다.</p> <p>자바스크립트는 둥적처리가 가능한 프론트엔드 언어이다.</p> <p>자바스크립트는 둥적처리가 가능한 프론트엔드 언어이다.</p> <p>자바스크립트는 둥적처리가 가능한 프론트엔드 언어이다.</p> <p>자바스크립트는 둥적처리가 가능한 프론트엔드 언어이다.</p>
-    <a id="p3">CSS란?</a><br/>
-    <p>Cascade style sheet</p><p>Cascade style sheet</p><p>Cascade style sheet</p><p>Cascade style sheet</p><p>Cascade style sheet</p><p>Cascade style sheet</p><p>Cascade style sheet</p><p>Cascade style sheet</p><p>Cascade style sheet</p><p>Cascade style sheet</p><p>Cascade style sheet</p><p>Cascade style sheet</p><p>Cascade style sheet</p><p>Cascade style sheet</p><p>Cascade style sheet</p><p>Cascade style sheet</p>
-    <a id="p4">데이터베이스란?</a><br/>
-    <p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p><p>Database Management System</p>
-<a href="#top" id="bottom">맨위로</a>
+    
+    <br>
+
+    <ol>
+        <li>PlugIn에서 'Live Server'를 인스톨해서 라이브 서버 연결 후 다운로드 가능</li>
+        <li><a href="../image\1f17089c3fb0eb7316b9d3d81fb8fb8e.jpg" download>다운로드(img)</a></li>
+        <li><a href="../etc\01-02_웹개발시작하기.pdf" download>다운로드(pdf)</a></li>
+        <li><a href="../etc\ServerSocketTest.java" download>다운로드(text)</a></li>
+    </ol>
+
+    <hr>
+    페이지를 길게 만들어서 페이지 중 특정한 위치로 이동하게 만드는 테스트<br>
+    (그 위치에는 위치를 표시하기 위한 태그(id="변수명")가 필요하다.)<p>
+
+    <a id="p1">HTML이란?</a><br>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+    Hyper Text Markup Language<p>
+
+    <a id="p2">JavaScript란?</a><br>
+    자바스크립트는 동적처리가 가능한 프론트엔드 언어이다.<p>
+    자바스크립트는 동적처리가 가능한 프론트엔드 언어이다.<p>
+    자바스크립트는 동적처리가 가능한 프론트엔드 언어이다.<p>
+    자바스크립트는 동적처리가 가능한 프론트엔드 언어이다.<p>
+    자바스크립트는 동적처리가 가능한 프론트엔드 언어이다.<p>
+    자바스크립트는 동적처리가 가능한 프론트엔드 언어이다.<p>
+    자바스크립트는 동적처리가 가능한 프론트엔드 언어이다.<p>
+    자바스크립트는 동적처리가 가능한 프론트엔드 언어이다.<p>
+    자바스크립트는 동적처리가 가능한 프론트엔드 언어이다.<p>
+    자바스크립트는 동적처리가 가능한 프론트엔드 언어이다.<p>
+    자바스크립트는 동적처리가 가능한 프론트엔드 언어이다.<p>
+    자바스크립트는 동적처리가 가능한 프론트엔드 언어이다.<p>
+    자바스크립트는 동적처리가 가능한 프론트엔드 언어이다.<p>
+    자바스크립트는 동적처리가 가능한 프론트엔드 언어이다.<p>
+    자바스크립트는 동적처리가 가능한 프론트엔드 언어이다.<p>
+
+    <a id="p3">CSS란?</a><br>
+    Cascade Style Sheet<p>
+    Cascade Style Sheet<p>
+    Cascade Style Sheet<p>
+    Cascade Style Sheet<p>
+    Cascade Style Sheet<p>
+    Cascade Style Sheet<p>
+    Cascade Style Sheet<p>
+    Cascade Style Sheet<p>
+    Cascade Style Sheet<p>
+    Cascade Style Sheet<p>
+    Cascade Style Sheet<p>
+    Cascade Style Sheet<p>
+    Cascade Style Sheet<p>
+    Cascade Style Sheet<p>
+
+    <a id="p4">데이터베이스란?</a><br>
+    Database Management System<p>
+    Database Management System<p>
+    Database Management System<p>
+    Database Management System<p>
+    Database Management System<p>
+    Database Management System<p>
+    Database Management System<p>
+    Database Management System<p>
+    Database Management System<p>
+    Database Management System<p>
+    Database Management System<p>
+    Database Management System<p>
+    Database Management System<p>
+
+    <a href="#top" id="bottom">맨 위로</a>
+
 </body>
 </html>
+

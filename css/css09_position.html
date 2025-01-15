@@ -1,35 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid gray;
+            float: left; /* body가 기준점으로 정렬이 된다. */
+        }
+        /* position 속성이 생략되었을 때는 static값이 default값이다. */
+        #div3 {
+            background-color: yellow; 
+            position: absolute; /*body의 전체 기준, 원래 있던 자리는 재정렬된다.*/
+            left: 200px;
+            top: 200px;
+        }
+        #div4 {
+            background-color: orange;
+            position: relative; /*자신의 원래 위치 기준, 원래 있던 자리는 빈공간으로 남는다.*/
+            left: 100px;
+            top: -100px;
+        }
+        #div1 {
+            background-color: aquamarine;
+            position: fixed; /*window가 기준점이 되어 스크롤을 돌려도 화면상 그자리에 유지가 된다. 원래 있던 자리는 재정렬된다.*/
+            bottom: 10px;
+            right: 10px;
+        }
+    </style>
 </head>
-<style>
-    div{
-        width:200px; height: 200px; border:1px solid gray;
-        float: left;
-    }
-    #div1{
-        background-color: aquamarine;
-        position: fixed;
-        bottom:10px;
-        right: 10px;
-    }
-    #div3{
-        background-color: yellow;
-        left:200px; top:200px;
-        position: absolute;
-    }
-    #div4{
-        background-color: orange;
-        position:relative;
-        left: 100px; top:-100px;
-    }
-</style>
+
 <body>
-    <img src="../img/다운로드 (2).jpeg"/>
-    <br/>
+    <img src="../image/cherry-blossoms-301250_640.jpg">
+    <br>
     <div id="div1">a</div>
     <div>b</div>
     <div id="div3">c</div>

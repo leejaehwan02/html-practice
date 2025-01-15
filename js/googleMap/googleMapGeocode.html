@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구글맵(지명, 건물명으로 검색)</title>
+    <style>
+        #geoMap{
+            min-width:98vw; min-height: 98vh; background-color: yellowgreen;
+        }
+        /* 검색리스트*/
+        #searchList{
+            position:absolute; width:300px; min-height:80vh; background-color: #ddd;
+            left:50px; top:50px; opacity:0.4;
+        }
+        .search{
+            margin:10px; padding:5px; background-color: black; opacity:0.9; color:white;
+            color:white; border-radius: 10px;
+        }
+        /* 검색 박스*/
+        #searchBox{
+            position:absolute; left:0; top:50px; width:100%; text-align:center;
+        }
+    </style>
+    <script>
+        // 현재위치구하기
+        var lati;
+        var longi
+        function getLocation(){
+            if(navigator.geolocation){ // 값이 존재하면 참
+                navigator.geolocation.getCurrentPosition(
+                    function(position){
+                        console.log(position);
+                        lati = position.coords.latitude; // 현재위치의 위도
+                        longi = position.coords.longitude; // 현재위치의 경도도
+                    }
+                );
+            }else{ 
+                console.log("위도경도없음.")
+                // 서울시청
+                lati=37.5667208903637;
+                longi=126.9786296490;
+
+            }
+        }
+        getLocation();
+    </script>
+</head>
+<body>
+    <!--지도 표시할 곳-->
+    <div id="geoMap"></div>
+    <!--검색 결과 표시하는 곳-->
+    <div id="searchList"><div class="search"></div></div>
+    <!--검색어 입력-->
+    <div id="searchBox">
+        <input type="text" id="searchWord" value="잠실종합운동장장"/>
+        <!--마우스 클릭시 검색하여 결과를 searchList에 표시한다.-->
+        <input type="button" value="Geocode" id="searchBtn"/>
+    </div>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2gmPnhxfnSMwuQ41PFvshaLHhWZoE6bw&callback=startMap"></script>
+    <script>
+         lati=37.5667208903637;
+         longi=126.9786296490;
+         var map;
+         var geocorder;
+        function startMap(){
+            console.log(lati, longi);
+            var myCenter = new google.maps.LatLng(lati, longi);
+
+            map = new google.maps.Map(document.getElementById("geoMap"), {
+                center : myCenter,
+                zoom : 14,
+                mapTypeId : google.maps.MapTypeId.ROADMAP
+            });
+
+            var marker = new google.maps.Marker({
+                position:myCenter,
+                icon:'pin.png',
+                map : map
+            });
+            marker.setMap(map);
+
+            // 지명, 건물명으로 검색이 가능한 geocode객체를 생성한다.
+            geocoder = new google.maps.Geocoder();
+        }
+
+        function getAddress(word){
+            console.log(word);
+
+            // 입력받은 지명 또는 건물명으로 지도 정보 구하기
+            //             지명 또는 건물명, 콜백함수
+            geocoder.geocode({address:word}, function(results, status){
+                console.log(results);
+                console.log(status);
+                if(status=='OK'){ // 주소가 있을 때
+                    var latitude = results[0].geometry.location.lat(); // 위도
+                    var longitude = results[0].geometry.location.lng(); // 경도
+                    var addr = results[0].formatted_address;
+
+                    var tag = "<div class='search'>";
+                    tag += "<h3>" + word + "</h3>";
+                    tag += "위도 :" + latitude;
+                    tag += "</br>경도 :" + longitude;
+                    tag += "</br>주소 :" + addr;
+                    tag += "</div>";
+
+                    document.getElementById("searchList").innerHTML += tag;
+
+                    // 지도의 중심을 검색한 곳으로 이동
+                    //            results[0]['geometry']['location']
+                    map.setCenter(results[0].geometry.location);
+
+                    // 대화상자에 표시할 내용을 만들기
+                    var tag = "latitude ->" + latitude;
+                    tag += "<br/>longitude ->" + longitude;
+                    tag += "<br/>addr ->" + addr;
+                    
+                    // 마커 만들기
+                    var marker = new google.maps.Marker({
+                        map : map,
+                        icon : 'pin2.png',
+                        title : addr,
+                        position : results[0].geometry.location
+                    });
+
+                    // 대화상자 띄우기
+                    // mouseover, mouseout
+
+                    var popup = new google.maps.InfoWindow({content: tag});
+
+                    // 이벤트 등록
+                    google.maps.event.addListener(marker, 'mouseover', function(){
+                        popup.open(map, marker);
+                    });
+                    google.maps.event.addListener(marker, 'mouseout', function(){
+                        popup.close(map, marker);
+                    });
+
+                }else{ // 주소가 없을 때
+                    alert("존재하지 않는 주소입니다.");
+                }
+                document.getElementById("searchWord").value = "";
+            });
+
+        }
+        // 버튼을 클릭시
+        document.getElementById("searchBtn").onclick = function(){
+            // searchWord에 값이 있을 때만 지도 검색...
+            geoAddress();
+        }
+        // input박스에서 enter를 칠 경우
+        document.getElementById("searchWord").onkeyup = function(){
+            // enter가 입력되면 searchWord에 값이 있을 때만 지도 검색
+            if(event.keyCode == 13){
+                geoAddress();
+            }
+        }
+        function geoAddress(){
+            // searchWord에 값이 있을 때만 지도 검색...
+            var word = document.getElementById("searchWord").value
+                if(word==""){
+                alert("지명 또는 건물명을 입력하세요.");
+            }else{
+                getAddress(word);
+            }
+
+        }
+    </script>
+</body>
+</html>

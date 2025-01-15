@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #ground {
+            background-color: beige;
+            width: 800px;
+            margin: 70px auto 0;
+            overflow: auto;
+            height: 750px;
+        }
+        ul, li {
+            padding: 0;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            padding-top: 30px;
+            font-size: 50px;
+        }
+
+        #dan>li {
+            /* background-color: aqua; */
+            float: left;
+            list-style-type: none;
+            overflow: auto;
+            width: 11%;
+            text-align: center;
+            margin-top: 10px;
+        }
+        input[type=button] {
+            width: 60px;
+            height: 35px;
+            font-size: 17px;
+            background-color: yellowgreen;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #result {
+            margin: 30px 0;
+            font-size: 2em;
+            text-align: center;
+            line-height: 50px;
+            
+        }
+    </style>
+    
+    <script>
+            // function changeBorder(obj) {  //마우스 올렸을 때
+            //     obj.style.color = blue; 
+            // }
+
+            // function changeTextColor() {  // 마우스 눌렀을 때
+            //     obj.style.backgroundColor
+            // }
+
+            //document.result  // 마우스 땠을 때(구구단 출력)
+
+            var gugu ;
+            var result ;
+
+            if(document.getElementById("result")) {
+                for(var i=2; i<=9; i++) {
+                    result = 1 * gugu[i];
+                }
+                return true;
+                document.getElementById("result").innerHTML = gugu
+            }
+            
+            
+    </script>
+</head>
+
+<body>
+    <div id="ground">
+        <h1>구구단</h1>
+        <ul id="dan" onmouseover="changeBorder(this);">
+            <li><input type="button" value="1단" class="1" title="1단 실행"></li>
+            <li><input type="button" value="2단" class="2" title="2단 실행"></li>
+            <li><input type="button" value="3단" class="3" title="3단 실행"></li>
+            <li><input type="button" value="4단" class="4" title="4단 실행"></li>
+            <li><input type="button" value="5단" class="5" title="5단 실행"></li>
+            <li><input type="button" value="6단" class="6" title="6단 실행"></li>
+            <li><input type="button" value="7단" class="7" title="7단 실행"></li>
+            <li><input type="button" value="8단" class="8" title="8단 실행"></li>
+            <li><input type="button" value="9단" class="9" title="9단 실행"></li>
+        </ul>
+        <br>
+        <div id="result">
+            버튼을 클릭하세요!
+        </div> 
+    </div>
+</body>
+</html>

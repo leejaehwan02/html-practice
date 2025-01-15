@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{border:1px solid gray;} /* '*' : body의 모든 구역 */
+
+        /* 자손선택자 */
+        ul>li {
+            background-color: beige;
+        }
+
+        /* 후손선택자 : space(스페이스바) 후손 */
+        ul b {
+            font-size: 2em;
+            color: red;
+        }
+
+        /* 반응선택자 */
+        div li:hover, h1:hover { /*마우스올려뒀을 때*/
+            background-color: yellow;;
+        }
+        div li:active { /*누르고 있을 때*/
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>자손/후손 선택자</h1>
+        <ul>
+            <li>111111</li>
+            <li>222222</li>
+            <li>33<b>33</b>33</li>
+            <li>444444</li>
+            <li>555555</li>
+        </ul>
+    </div>
+</body>
+</html>

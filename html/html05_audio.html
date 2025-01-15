@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>document</title>
+    <title>오디오</title>
 </head>
 <body>
     <h1>오디오 파일 재생</h1>
-    <audio src="../audio_movie/Kalimba.mp3" controls autoplay></audio>
-
+    <audio src="../audio/Kalimba.mp3" controls></audio>
+    
     <audio controls>
-        <source src="../audio_movie/Kalimba.mp3" type="audio/mp3"/>
-        <source src="../audio_movie/Kalimba.ogg" type="audio/ogg"/>
+        <source src="../audionvideo/Kalimba.mp3" type="audio/mp3"/>
+        <source src="../audionvideo/Kalimba.ogg" type="audio/ogg"/>
+        <!-- mp3가 안되면 ogg 파일로 실행된다. -->
     </audio>
 </body>
 </html>

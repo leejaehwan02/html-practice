@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body, ul, li {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        /* float 정렬하면서 <hr>이 위로 올라가며 보이지않게 되어서 다시 보이도록 정리하는 방법 */
+        #menu1 {    
+            overflow: auto;
+        }
+
+        #menu1>li {
+            float: left;
+            width: 16.6%;
+            height: 50px;
+            line-height: 50px;
+            font-size: 2em;
+            text-align: center;
+            background-color: olive;
+            color: white;   
+        }
+        #menu1>li:first-child {
+            border-radius: 20px 0 0 20px;
+        }
+        #menu1>li:last-of-type {
+            border-radius: 0 0 20px 20px;
+        }
+
+        /* 구조선택자
+           짝수번째, 홀수번째, 3의 배수번째... : nth-child(n) - 'n'은 0부터 1씩 증가
+           ex) 2n - 짝수 / 2n+1 - 홀수 / 3n - 3의 배수... */
+        #menu1>li:nth-child(2n+1) {
+            background-color: orange;
+        }
+
+        #menu2 {
+            overflow: auto;
+        }
+        #menu2>li {
+            float: left;
+            width: 16.6%;
+            height: 60px;
+            line-height: 50px;
+            font-size: 2em;
+            text-align: center;
+            background-image: url(../image/title_layer2.gif);
+        }
+        #menu2>li:nth-of-type(2n) {
+            border-bottom: 3px red solid;
+            border-radius: 0 25px 0 25px;
+        }
+        #menu2>li:nth-of-type(2n+1) {
+            border-bottom: 3px blue solid;
+        }
+        /* 'nth-child'의 n은 0부터 / 'nth-of-type'의 n은 1부터 */
+    </style>
+</head>
+
+<body oncontextmenu="return false" onselectstart="return false">
+    <!-- 
+    복사한 내용은 buffer에 저장된다.
+    'on' 이라는 속성은 대부분 이벤트(팝업 등)
+    oncontextmenu="return (true 또는 false)" : 마우스 우클릭 제어(드래그는 가능)
+    onselectstart="return (true 또는 false)" : 드래그 제어
+    -->
+    <ul id="menu1">
+        <li>HOME</li>
+        <li>회사소개</li>
+        <li>고객센터</li>
+        <li>커뮤니티</li>
+        <li>자랑할래요</li>
+        <li>로그인</li>
+    </ul>    
+
+    <hr>
+
+    <ul id="menu2">
+        <li>HOME</li>
+        <li>회사소개</li>
+        <li>고객센터</li>
+        <li>커뮤니티</li>
+        <li>자랑할래요</li>
+        <li>로그인</li>
+    </ul>   
+
+    <style> /*위에 복잡해서 여기에 입력함*/
+        /* 
+        텍스트 스타일 
+        ::first-letter - 텍스트 중 첫번째 글자에 스타일을 지정한다.
+        ::first-line - 첫번째 줄에 스타일 적용
+        ::selection - 선택 영역(드래그)에 스타일 적용
+        */
+        .content::first-letter {
+            font-size: 2em;
+            color: red;
+            background-color: aquamarine;
+        }
+        .content::first-line {
+            background-color: yellow;
+            text-decoration: underline;
+        }
+        .content::selection {
+            background-color: #000;
+            color: red;
+        }
+    </style>
+
+    <hr>
+
+    <div class="content">
+        [마이데일리 = 김성호 기자]잉글랜드 프리미어 리그 명문 구단인 맨체스터 유나이티드는 지난 해 10월말 에릭 텐 하흐 감독을 해고했다. 
+        시즌전 2년 계약 연장을 한 이후 3개월만에 충격적인 조치를 단행했다.
+
+        그리고 영입한 감독이 포르투갈 스포르팅 CP의 루벤 아모림이었다. 2020-21시즌 스포르팅 CP 부임후 곧바로 리그 우승을 차지했다. 
+        이번 시즌에도 맨유로 부임하기까지 11라운드 경기에서 모두 승리했다. 
+        유럽축구연맹(UEFA) 챔피언스리그(UCL)에선 4경기 3승 1무를 기록했다.
+
+        스포르팅에 있을 동안 아모림 감독은 리그 2회, 컵대회 2회, 슈퍼컵 1회 우승을 차지해 30대에 명장 반열에 올랐다.
+
+        명가 재건을 위해서 맨유는 아모림을 영입했다. 그런데 무패 감독인 아모림이 맨유로 와서는 승리보다는 패가 더 많은 감독이 됐다. 
+        이를 두고 맨유 출신의 레전드가 ‘최악의 감독’이라고 직격했다.
+
+        영국 언론에 따르면 게리 네빌이 아모림에 대한 날선 비판을 날렸다. 네빌은 그야말로 맨유의 원클럽 맨이다. 
+        프리미어 리그 전문가로 활동중인 네빌은 1990년 맨유 아카데미에 들어간 후 1992년 1군에 데뷔한 후 2011년 은퇴때까지 맨유 유니폼만 입었다. 
+        알렉스 퍼거슨 감독과 함께 맨유의 전성기를 이끌었다.
+    </div>
+</body>
+</html>

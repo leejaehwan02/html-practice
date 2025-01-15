@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+.container{
+            width: 500px;
+            margin: 100px auto;
+            overflow: auto;
+}
+#title{
+
+            text-align: center;
+        }
+        #userid, #userpwd{
+            width:456px;
+            padding: 20px;
+            margin: 10px 0px;
+        } 
+        .login-btn{
+            padding: 20px;
+            margin: 10px 0px;
+            width: 100%;
+            padding: 20px;
+            background-color: black;
+            color: #fff;
+            font-size: 1.5em;
+        }
+        .join{
+            float:left;
+            color:gray;
+        }
+        
+a:link, a:visited, a:hover{
+    color: black; text-decoration: none;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">로그인</h1>
+        <hr/>
+        <form method="post" action="LJH.html">
+            <input type="text" name=userId id=userid placeholder="아이디 입력">
+            <input type="password" name= userPassword id="userpwd" placeholder="비밀번호 입력">
+            <input type="checkbox"> 로그인 정보 저장
+            <input type="submit" value="로그인" class="login-btn" onclick="alert('로그인 완료')">
+            <div class="join">
+                <a href="join.html">회원가입</a>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

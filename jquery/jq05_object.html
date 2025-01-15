@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style>
+        ul, li{
+            margin:5px; padding:5px; list-style-type:none;
+        }
+        li{
+            float:left; border:1px solid gray;
+        }
+        img{width:100px; height:100px;}
+    </style>
+    <script>
+        $(function(){
+            // before() : 선택자의 이전에 객체 추가
+            $("#img").before("<li id='copy'><img src='../img/02.jpeg'/></li>")
+            // after() : 선택자 다음에 객체 추가
+            $("#copy").after("<li><img src='../img/03.jpeg'/></li>");
+            // append()
+            $("ul").append("<li><img src='../img/04.jpeg'/></li>");
+            // appendTo()
+            $("<li><img src='../img/05.jpeg'/></li>").appendTo("ul");
+            // insertAfter()
+            $("<li><img src='../img/06.jpeg'/></li>").insertAfter("#img");
+            // insertBefore()
+            $("<li><img src='../img/07.jpeg'/></li>").insertBefore("#img");
+            // clone() : 객체를 복사, 1번만 추가할 수 있다.
+            var obj = $("#copy").clone();
+            obj.attr("id","copy2");
+            $("ul").append(obj);
+            // .remove : 선택자 자체 지우기
+            $("#copy").remove();
+            // .empty : 선택자 내용만 지우기
+            $("#img").empty();
+
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li id="img"><img src="../img/01.jpeg"/></li>
+    </ul>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 동위 선택자
+        선택자a + 선택자b : 선택자a의 바로 다음에 있는 선택자b를 선택한다. 
+        선택자a ~ 선택자b : 선택자a의 다음에 있는 모든 선택자b를 선택한다. */
+        h1+h2 {
+            background-color: green;
+        }
+        h1~h2 {
+            background-color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>동위 선택자1</h1>
+    <h2>동위 선택자2</h2>
+    <h2>동위 선택자3</h2>
+    <h2>동위 선택자4</h2>
+    <h2>동위 선택자5</h2>
+    <h2>동위 선택자6</h2>
+    <h3>~~~~~~~~~~~~~~~~~</h3>    
+
+    <h1>동위 선택자1</h1>
+    <h2>동위 선택자2</h2>
+    <h2>동위 선택자3</h2>
+    <h2>동위 선택자4</h2>
+    <h2>동위 선택자5</h2>
+    <h2>동위 선택자6</h2>
+    <h3>~~~~~~~~~~~~~~~~~</h3>
+</body>
+</html>

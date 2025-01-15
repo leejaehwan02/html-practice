@@ -1,71 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
+
     <h1>폼 양식 만들기</h1>
     <h2>로그인폼, 회원가입, 글쓰기, 주문서 작성폼...</h2>
+    
     <pre>
-        text: 한줄의 문자열입력, 아이디,이름 ,주소 ,글제목,연락처....
-        name: 백엔드 서버로 데이터를 가져갈때 필요한 변수
-        value: 박스에 입력한 값을 가지는 속성성
-        placeholder : 안내 메시지표시시
-        readonly : 읽기전용
+        text : 한줄의 문자열 입력(아이디, 이름, 주소, 글제목, 연락처...)
+        name : 백엔드 서버로 데이터를 가져갈 때 필요한 변수
+        value : 박스에 입력한 값을 가지는 속성
+        placeholder : 안내 메시지 표시
+        readonly : 읽기 전용
         disabled : 비활성화
-        size : 박스크기기
+        size : 박스크기(실제로 들어가는 글자수에 딱 떨어지지않아서 요즘은 CSS로 맞춘다.)
+        minlength, maxlength : 입력할 수 있는 글자의 수 지정
+        radio : 제시하는 목록 중 1개만 선택
+        checkbox : 제시하는 목록 중 여러개 선택 가능
+        rows : 줄 수
+        cols : 한 줄당의 글자 수
+        ※ <대괄호> 안에 마지막에 '/'가 있으면 끝낸다는 표시로 적는 것을 권장하지만, 없어도 기능상 문제는 없다.
     </pre>
+
     <form method="post" action="a.jsp">
-        아이디 : <input type="text" name="userid" value="gildong" placeholder="아이디입력" readonly><br/>
-        비밀번호 : <input type="password" name="userpassword"><br/>
-        이름 : <input type="text" name="username" placeholder="이름을 입력하세요" disabled/><br/>
-        주소 : <input type="text" name="addr" size="10" minlength="5" maxlength="12"><br/>
-        이메일 : <input type="email" name="email"><br/>
-        성별 : <input type="radio" value="M" name="gender" checked> 남
-               <input type="radio" value="F" name="gender"> 여<br/>
-        취미 : <input type="checkbox" value="등산"> 등산
-                <input type="checkbox"value="걷기"> 걷기
-                <input type="checkbox"value="달리기"> 달리기
-                <input type="checkbox"value="자전거"> 자전거
-                <input type="checkbox"value="쇼핑"> 쇼핑<br/>
-        메모 : <textarea name="memo" rows="5" cols="50">글내용용</textarea><br/>
+        <!-- method="post"가 없으면 다음 페이지로 넘어갔을 때 get방식(생략했을 때 디폴트값)으로 주소창에 정보들이 표출된다. -->
+        <!-- 전송하기를 누르면 action="a.jsp"으로 인해 a.jsp로 데이터가 전송된다는 뜻. -->
+
+        아이디 : <input type="text" name="userid" value="gil-dong" placeholder="아이디 입력" readonly/><br>
+        비밀번호 : <input type="password" name="userpwd"/><br>
+        이름 : <input type="text" name="username" placeholder="이름을 입력하세요." disabled/><br>
+        주소 : <input type="text" name="addr" size="10" minlength="5" maxlength="12"/><br>
+        이메일 : <input type="email" name="email"/><br>
+        성별 : <input type="radio" value="M" name="gender" checked/> 남
+               <input type="radio" value="F" name="gender"/> 여 <br>
+        <!-- 위의 남,여는 <>밖에 있기 때문에 연관은 없다. 단지 사용자에게 알려주기위한 정보이고 한 세트끼리는 name을 같은 걸로 통일한다. -->
+        
+        취미 : <input type="checkbox" value="등산" name="hobby"/> 등산
+               <input type="checkbox" value="walking" name="hobby"/> 걷기
+               <input type="checkbox" value="running" name="hobby"/> 달리기
+               <input type="checkbox" value="자전거" name="hobby"/> 자전거
+               <input type="checkbox" value="shopping" name="hobby"/> 쇼핑 <br>
+        <!-- 여기의 값은 Java(백엔드)에서는 배열로 가져간다. -->
+
+        메모 : <textarea name="memo" rows="5" cols="50">글내용</textarea> <br>
+        <!-- <textarea name="">과 </textarea> 사이에 value를 넣는다. -->
+
         관심분야 : <select name="interest" size="3" multiple>
-                        <option value="not">==선택==</option>
-                        <option value="cycle">싸이클</option>
-                        <option>영화감상</option>
-                        <option>웹툰</option>
-                        <option>컴퓨터</option>
-                        <option selected>게임</option>
-        </select><br/>
+                    <option>==선택==</option>
+                    <option>싸이클</option>
+                    <option>영화감상</option>
+                    <option>웹툰</option>
+                    <option>컴퓨터</option>
+                    <option selected>게임</option>
+                  </select> <br>
+        <!-- 업그레이드되면서 옵션에 value는 생략하고 <option>싸이클</option>의 가웃뎃 값이 value 값으로 전달될 수 있도록 변했다. -->
+
         관심과목 : <select name="language">
                     <optgroup label="frontend">
                         <option>HTML</option>
                         <option>CSS</option>
-                        <option>JAVASCRIPT</option>
+                        <option>JavaScript</option>
                     </optgroup>
                     <optgroup label="백엔드">
                         <option>JSP</option>
                         <option>Spring</option>
-                        <option>Springboot</option>
+                        <option>SpringBoot</option>
                     </optgroup>
-        </select>
-        <br/>
-        파일첨부 : <input type="file" name="filename" multiple><br/>
-        숨김데이터 : <input type="hidden" name="no" value="1234"><br/>
-        숫자만 입력 : <input type="number" name="num" min="1" max="10" step="2"><br/>
-        범위입력 : <input type ="range" min="1" max="10" value="5"><br/>
-        date : <input type="date" name="date1"><br/>
-        datetime-local : <input type="datetime-local" name="date2"><br/>
-        month : <input type="month" name="date3"><br/>
-        week : <input type="week" name="date4"><br/>
-        color : <input type="color" name="clr"><br/>
-        <hr/>
-        <input type="submit" value="전송하기">
-        <input type="reset" value="초기화">
-        <input type="button" value="전송하기" onclick="alert('버튼이 클릭되었습니다.')">
-        <input type="image" src="../img/button.png">
+                  </select> <br>
+        <hr>
+
+        파일첨부 : <input type="file" name="filename" multiple/> <br>
+        숨김데이터 : <input type="hidden" name="no" value="1234" /> <br>
+        <!-- 브라우저에서는 모두 문자 형태(숫자 포함) -->
+
+        숫자만 입력 : <input type="number" name="num" min="1" max="10" step="2"/> <br>
+        범위 입력 : <input type="range" name="rang" min="1" max="10" value="5"/> <br>
+        <!-- value는 현재값을 뜻한다. -->
+
+        date : <input type="date" name="date1"/> <br>
+        datetime : <input type="datetime-local" name="date2"/> <br>
+        month : <input type="month" name="date3"/> <br>
+        week : <input type="week" name="date4"/> <br>
+        color : <input type="color" name="clr"/> <br>
+        <hr>
+
+        <input type="submit" value="전송하기"/>
+        <input type="reset" value="초기화"/>
+        <input type="button" value="전송하기" onclick="alert('버튼이 클릭되었습니다.')"/>
+        <input type="image" src="../image/botton.png"/> <br>
+        <!-- 전송은 브라우저, 파일 기록은 Java가 한다. -->
+        <!-- botton은 어떤 기능을 주기 전까지는 특별한 기능은 없다. -->
+        <!-- submit과 image는 form태그 내에서 같은 기능을 가지고 있다. -->
+
     </form>
 </body>
 </html>

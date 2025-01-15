@@ -1,45 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        div{
-            width: 200px; height: 200px;
-        }
-        #dl{
-            position: relative;
-    
-        }
-        #il{
-            position: absolute;
-            left: 200px;
-            top:200px;
-        }
-        #d2{
-            position:absolute;
-            left:100px;
-            top:100px;
-        }
-        #d3{
-            position: absolute;
-            left: 200px;
-            top:200px;
 
-            /* 겹쳐진 컴포넌트의 순서바꾸기 : 값이 클수록 위로 배치됨*/
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+        }
+        #d1 {
+            position: relative; /*i1의 기준점을 d1으로 잡기위해 static외의 값을 사용*/
+        }
+        #i1 {
+            position: absolute; /*body기준*/
+            left: 200px;
+            top: 200px;
+        }
+        #d2 {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+
+            /*적용된 순서대로 겹쳐지지만 속성을 통해 바꿀 수 있다. 'z-index' : 값이 클수록 위로 배치. 생략시엔 default값=0*/
             z-index: 100;
+        }
+        #d3 {
+            position: absolute;
+            left: 200px;
+            top: 200px;
         }
     </style>
 </head>
+
 <body>
     <div style="background-color: yellow;"></div>
-    <div style="background-color: #00e1ff;">
-        <div style="background-color: rgb(255,0,234);" id="d2"></div>
+    <div style="background-color: orange;">
+        <div style="background-color: aqua;" id="d2"></div>
     </div>
-    <div style="background-color: #0004ff;" id="dl">
-        <img src="../img/다운로드 (3).jpeg" style="width:100px; height:100px" id="il"/>
+    <div style="background-color: gray;" id="d1"> <!--부모-->
+        <img src="../image/cherry-blossoms-301250_640.jpg" id="i1" style="width: 100px; height: 100px;"> <!--자식-->
     </div>
-    <div style="background-color: rgb(255,0,21);" id="d3"></div>
+    <div style="background-color: greenyellow;" id="d3"></div>
 </body>
 </html>

@@ -4,66 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
-        ul,li{
-            list-style-type:none; margin:0; padding:0; border:4px solid gray;
+        ul, li {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            border: 2px solid gray;
+            /* border : 선의 색상(border-color), 선의 두께(border-width), 선의 모양(border-style) 등을 설정할 수 있다. */
+            /* solid(실선), dotted(점선), dashed(굵은점선), double(두줄선), groove... */
+            /* 선의 위치 - left, right, top, bottom */
         }
 
-        li{
-            margin:10px;
-            /*border : 선의 색상(border-color), 선의 두께(border-width), 선의 모양(border-style)*/
-            /*solid(실선), dotted, dashed, double, groove*/
-            /* border-top-style : dotted;
-            border-right-style : dashed;
-            border-bottom-style : double;
-            border-left-style : inset; */
-
-            border-style : dotted solid double;
-
-            /*border-top-color : red;
-            border-right-color : green;
-            border-bottom-color : blue;
-            border-left-color : yellow;*/
-
-            border-color : red green;
-
-            /*border-top-width : 5px;
-            border-right-width : 10px;
-            border-bottom-width : 10px;
-            border-left-width : 8px;
-
-            border-width : 5px 15px;*/
-
-            border : blue 1px solid;
-
-            /*border와 컨텐츠와의 여백 : padding-top, padding-right, padding-bottom, padding-left
-            padding-top : 10px;
-            padding-right : 5px;
-            padding-bottom : 25px;
-            padding-left : 3px;*/
-
-            padding : 10px;
-
-            /* margin : border와 바깥여백 : margin-top, margin-right, margin-bottom, margin-left*/
-            margin : 10px 20px; /* margin : 0 auto; */
+        li {
+            margin: 10px;
+            /* border-top-style: dotted;
+            border-right-style: dashed;
+            border-bottom-style: double;
+            border-left-style: inset; */
             
-            /*가장자리 둥글게*/
-            border-radius : 30px 50px 20px 10px;
-        }
-        img{
-            width:300px; height:300px;
-            border-radius:50%;
+            /* 그룹화하는 법 : 12시방향부터 시계방향으로 순서대로 적어준다. 
+            border-style: dotted dashed double inset; */
+            /* border-style: dotted solid dashed; */
+
+            /* border-top-color: red;
+            border-right-color: green;
+            border-bottom-color: blue;
+            border-left-color: yellow; */
+
+            /* border-color: red green; */
+
+            /* border-top-width: 5px;
+            border-right-width: 10px;
+            border-bottom-width: 10px;
+            border-left-width: 8px; */
+
+            /* border-width: 5px 15px; */
+
+            
+            /* 'border-style,color,width'도 그룹화 가능. 단, 값이 1개씩일때 */
+            border: solid blue 1px;
+
+            /* border와 컨텐츠와의 여백 : padding-top, padding=right, padding=bottom, padding-left */
+            padding-top: 10px;
+            padding-right: 5;
+            padding-bottom: 25;
+            padding-left: 3; 
+
+            padding: 10px;
+
+            /* margin: border와 바깥여백 */
+            margin: 20px;
+
+            /* 'border-radius: px 또는 %' = 표 또는 이미지 등의 가장자리 둥글게 만든다. */
+            border-radius: 10px;
         }
 
+        img {
+            width: 350px;
+            height: 250px;
+            border-radius: 50%;
+        }
     </style>
 </head>
+
 <body>
+    <h1></h1>
+
     <ul>
-        <li>프로축구 K리그1 포항스틸러스가 백성동과 다시 한번 손을 잡았다고 31일 밝혔다.</li>
-        <li>포항은 이날 백성동과 재계약을 체결했다고 전했다. 계약 기간은 공개하지 않았다.</li>
-        <li>일본 프로축구 J리그에서 데뷔해 2017년 K리그로 무대를 넓힌 그는 매년 꾸준히 경기에 나서며 존재감을 과시했다.</li>
-        <li>이후 2023년 포항스틸러스와 첫 연을 맺었다.</li>
+        <li>1980년대 모터스포츠를 주름잡았던 르노 5 터보가 전기차로 다시 태어났다.</li>
+        <li>이번에 부활한 르노 5 터보 3E는 이런 역사를 현대적으로 재해석했다.</li>
+        <li>르노 5 터보 3E는 외관에서도 과거와 현재를 절묘하게 융합했다.</li>
+        <li>또한, 차량의 차체는 탄소섬유 구조로 제작돼 강성과 경량화를 동시에 잡았다.</li>
     </ul>
-    <img src="../img/06.jpeg"><img src="../img/07.jpeg"><img src="../img/08.jpeg">
+
+    <br>
+
+    <img src="../image/2870c76de5d043c54b17a76af0f0b16b.jpg">
+    <img src="../image/cherry-blossoms-301250_640.jpg">
+    <img src="../image/1f17089c3fb0eb7316b9d3d81fb8fb8e.jpg">
 </body>
 </html>

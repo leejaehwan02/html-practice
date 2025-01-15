@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div:first-of-type {
+            width: 600px;
+            height: 600px;
+            border: 1px solid gray; /*여기 3줄까지만 쓰면 div를 넘치는 정보는 넘친대로 보인다.*/
+            overflow: hidden; /*overflow 기본값 : visible*/
+            transition-duration: 1s; /*transition-duration : 원하는 속도로 움직이도록 설정(s, ms 단위)*/
+        }
+        div:first-of-type>img {
+            width: 100%;
+        }
+        input[type=checkbox]:checked +div { /*동위선택자 - css13 참고*/
+            height: 100px;
+            width: 100px;
+            opacity:0.5; /*opacity : 투명도 0~1사이 지정*/
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox"> Click
+    <div>
+        <img src="../image/cherry-blossoms-301250_640.jpg">
+        <img src="../image/thumb_d_AAE4763587BE8A9A0A6E8FD64B90171E.jpg">
+        <img src="../image/1f17089c3fb0eb7316b9d3d81fb8fb8e.jpg">
+        <img src="../image/2870c76de5d043c54b17a76af0f0b16b.jpg">
+    </div>
+</body>
+</html>

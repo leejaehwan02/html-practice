@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        $(function(){
+            $("div").children(".one").css("background-color", "yellow");
+            // 속성과 속성값이 있는 속성은 attr()
+            $("div").next().attr("src","../img/02.jpeg");
+            // readonly=true상태 false로 고치기
+            $("div").next().next().prop("readonly", false);
+            $("h3").prev().css("color","red");
+            $("h4").parent().css("border","5px solid gray");
+            $("h3").siblings().css("border","2px dotted blue");
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h1 id="first">선택자의 종류 1</h1>
+        <h1 class="one">선택자의 종류 2</h1>
+        <h2 class="one">선택자의 <span>종류</span> 3</h2>
+        <h4>선택자의 종류 4</h4>
+        <h3>선택자의 종류 5</h3>
+        <h2>선택자의 종류 6</h2>
+    </div>
+    <img src="../img/01.jpeg"/>
+    <input type="text" readonly/>
+</body>
+</html>

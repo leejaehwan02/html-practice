@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            background-color: beige;
+            margin: 10px;
+            width: 500px;
+            height: 200px;    
+        }
+
+        #opt1>div {
+            background-color: aquamarine;
+            width: 100px;
+            margin: 20px;
+        }
+        #opt1 {
+            display: flex;
+            /* flex-direction: row; : 기본 정렬(위와 같은 효과 적용)*/
+            flex-direction: row-reverse; /*순서 반대, 오른쪽 정렬*/
+        }
+
+        #opt2>div {
+            background-color: pink;
+            height: 50px;
+            margin: 10px;
+        }
+        #opt2 {
+            display: flex;
+            /* flex-direction: column; */
+            flex-direction: column-reverse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="opt1">
+        <div>1111</div>    
+        <div>2222</div>    
+        <div>3333</div>    
+    </div>
+
+    <div class="container" id="opt2">
+        <div>1111</div>    
+        <div>2222</div>    
+        <div>3333</div>    
+    </div>
+
+    <style>
+        #opt3>div {
+            background-color: greenyellow;
+            width: 100px;
+            margin: 10px;
+        }
+        #opt3 {
+            display: flex; /*width를 100px로 적용해놓아도 공간이 부족하면 맞춰서 균등 분배한다.*/
+            /* flex-flow: row nowrap; 위와 같은 효과 적용, default 값이다. */
+            flex-flow: wrap; /*높이, 순서 정렬과 줄바꿈까지 적용된다.*/
+        }
+    </style>
+    <div class="container" id="opt3">
+        <div>1111</div>    
+        <div>2222</div>    
+        <div>3333</div>  
+        <div>4444</div>    
+        <div>5555</div>    
+        <div>6666</div>
+        <div>1111</div>    
+        <div>2222</div>    
+        <div>3333</div>  
+        <div>4444</div>    
+        <div>5555</div>    
+        <div>6666</div>    
+    </div>
+
+    <style>
+        #opt4>div {
+            background-color: orange;
+            width: 80px;
+            margin: 10px;
+        }
+        #opt4 {
+            display: flex;
+            /* justify-content: flex-start; : 앞부터 시작, default값*/
+            /* justify-content: flex-end; */
+            /* justify-content: center; */
+            /* justify-content: space-between; */
+            justify-content: space-around; /*맨앞, 맨위까지 여백을 준다.*/
+        }
+    </style>
+    <div class="container" id="opt4">
+        <div>1111</div>    
+        <div>2222</div>    
+        <div>3333</div>
+        <div>4444</div>    
+    </div>
+
+    <style>
+        #opt5>div {
+            background-color: seagreen;
+            width: 100px;
+            margin: 5px;
+        }
+        #opt5>div:first-of-type {
+            height: 50px;
+        }
+        #opt5>div:nth-of-type(3) {
+            height: 100px;
+        }
+        #opt5 {
+            display: flex;
+            /* align-items: stretch; : default값 */
+            /* align-items: flex-start; */
+            /* align-items: flex-end; */
+            /* align-items: center; */
+            align-items: baseline; /* flex-start의 효가가 적용되고, baseline 기능이 적용되지않고있음. */
+        }
+    </style>
+    <div class="container" id="opt5">
+        <div>aaaa</div>    
+        <div>bbbb</div>    
+        <div>cccc</div>
+        <div>dddd</div>    
+    </div>
+</body>
+</html>

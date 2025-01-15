@@ -1,46 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
-        table{
+        table {
             border-collapse: collapse;
         }
-        td{
-            border:1px solid red;
+        td {
+        border: 1px solid red;
         }
-        .c1{heigth:100px; text-align: center;}
+        .c1 {height: 100px; text-align: center;}
     </style>
 </head>
+
 <body>
     <table>
-        <!-- 컬럼을 처리하는 태그-->
-         <colgroup>
-            <col span="2" style="background-color:antiquewhite;"/>
-            <col style="background-image: url(../img/다운로드\ \(6\).jpeg);"/>
+        
+        <!-- 컬럼(열)을 처리하는 태그 -->
+        <colgroup>
+            <col span="2" style="background-color: beige"/>
+            <col style="background-image: url(../image/cherry-blossoms-301250_640.jpg);"/>
         </colgroup>
-        <tr style="background-color: aquamarine;">
-            <td>신선과실지수 상승률 20년 만에 최고치</td>
-            <td>기후변화로 농산물 수급 불안해진 탓</td>
-            <td>통계청은 올해 소비자물가가 전년 대비 2.3% 올랐다</td>
-            <td>기재부는 올해 말 종료 예정이던 유류세 인하</td>
-            <td>그러나 실생활과 밀접한 밥상 물가는 크게 올랐다</td>
+
+        <tr style="background-color: aquamarine;">  <!-- 겹치는 곳은 순서대로 실행되어 덮어써진다. -->
+            <td>카카오톡</td>
+            <td>네이트온</td>
+            <td>버디버디</td>
+            <td>싸이월드</td>
+            <td>메가패스</td>
         </tr>
         <tr class="c1">
-            <td>신선과실지수 상승률 20년 만에 최고치</td>
-            <td>기후변화로 농산물 수급 불안해진 탓</td>
-            <td>통계청은 올해 소비자물가가 전년 대비 2.3% 올랐다</td>
-            <td>기재부는 올해 말 종료 예정이던 유류세 인하</td>
-            <td>그러나 실생활과 밀접한 밥상 물가는 크게 올랐다</td>
+            <td>카카오톡</td>
+            <td>네이트온</td>
+            <td>버디버디</td>
+            <td>싸이월드</td>
+            <td>메가패스</td>
         </tr>
         <tr>
-            <td>신선과실지수 상승률 20년 만에 최고치</td>
-            <td class="c1">기후변화로 농산물 수급 불안해진 탓</td>
-            <td>통계청은 올해 소비자물가가 전년 대비 2.3% 올랐다</td>
-            <td>기재부는 올해 말 종료 예정이던 유류세 인하</td>
-            <td>그러나 실생활과 밀접한 밥상 물가는 크게 올랐다</td>
+            <td>카카오톡</td>
+            <td>네이트온</td>
+            <td>버디버디</td>
+            <td>싸이월드</td>
+            <td>메가패스</td>
+        </tr>
+        <tr>
+            <td>카카오톡</td>
+            <td>네이트온</td>
+            <td class="c1">버디버디</td>
+            <td>싸이월드</td>
+            <td>메가패스</td>
+        </tr>
+        <tr>
+            <td>카카오톡</td>
+            <td>네이트온</td>
+            <td>버디버디</td>
+            <td>싸이월드</td>
+            <td>메가패스</td>
         </tr>
     </table>
 </body>

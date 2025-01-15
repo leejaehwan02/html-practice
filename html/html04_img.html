@@ -2,25 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>이미지 태그그</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 태그</title>
 </head>
 <body>
-    <h1 title="title속성 테스트중~~~">이미지 연습하기</h1>
+<h1 title="title 속성 테스트 중~~~">이미지 연습하기</h1>
+
     <pre>
-        ./ : 현재 폴더
-        ../ : 상위 폴더
-        
-        alt : 이미지가 없으면 대신 표시한다
-        width, height : 폭과 높이 px, %
+        './':현재폴더
+        '../':상위폴더
+
+        alt : 이미지가 없으면 대신 표시
+        width, height : 폭과 높이이고 px(픽셀), %(퍼센트) 단위가 있다.
         title : 풍선도움말
     </pre>
-    <img src="../img/다운로드 (3).jpeg"width="200"height="200"alt="이미지 대신에 표시되는 문자자"><br/>
-    <img src="../img/다운로드 (4).jpeg"width="50%"title="이미지에 풍선도움말">
 
+    <!--바디 크기 대비-->
+    <img src="../image/1f17089c3fb0eb7316b9d3d81fb8fb8e.jpg" width="200" height="150" alt="이미지 대신에 표시되는 문자"/><img src="../image/cherry-blossoms-301250_640.jpg"/>
+    <img src="../image/1f17089c3fb0eb7316b9d3d81fb8fb8e.jpg" width="50%" alt="이미지 대신에 표시되는 문자"/>
+    <img src="../image/cherry-blossoms-301250_640.jpg" width="50%" title="이미지에 풍선도움말"/>
+
+    <!--테이블 크기 대비-->
     <table border="1" width="500">
         <tr>
-          <td><img src="../img/다운로드.jpeg"width="50%"></td>  
+            <td><img src="../image/cherry-blossoms-301250_640.jpg" width="50%"></td>
         </tr>
     </table>
 </body>

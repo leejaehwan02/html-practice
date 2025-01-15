@@ -1,51 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        /* font-family : 글꼴 */
-        div.c1{
-            font-family: 궁서,굴림,Arial, Helvetica, sans-serif;
-        }
-        div.c2{
-            /*글자 크기 : px(기본16px), pt,cm,in(inch),em(상대크기) */
-            font-size: 1.2em;
-            /*글자 유형 : 진하게(bold),기울임(italic),보통(normal)*/
-            font-style: italic;
-            font-weight: 100;/*bold, 100,200,300,~800*/
-            letter-spacing: 1.5em;/*자간*/
-        }
-        div.c3{
-            text-align:center;
-        }
-        li{
-            border:1px solid #000;
-            height: 100px;
-            width: 300px;
-            font-size: 2em;
-            text-align: center;
-            line-height: 100px;
-            margin: 30px;
-            /*글자에 그림자 넣기*/
-            text-shadow: -5px -5px 5px red ;
-            /* 박스에 그림자 넣기*/
-            box-shadow: 5px 5px 5px gray;
-            /*대소문자*/
-            text-transform: lowercase;
-        }
-    </style>
+
+<style>
+    /* font-family : 글꼴 */
+    div.c1 {
+        font-family: 궁서, 굴림, arial, helvetica, sans-serif; 
+        /* '체'가 붙어있으면 모든 글자의 사이즈가 같다. */
+        /* 앞부터 확인해서 그 글씨체가 없으면 뒤에 있는 걸로 적용된다. */
+    }
+    div.c2 {
+        /* 글자크기 : px(기본16px), pt, cm, mm, in(inch), em(상대크기:현재의 글자 기준) */
+        font-size: 1.2em;
+
+        /* 글자유형 : 진하게(bold), 기울임(italic), 보통(normal) */
+        font-style: italic;
+        font-weight: 800;  /* bold 범위 : 100~800 */
+        letter-spacing: 1.5em /* 자간 : 글자 간격 */
+    }
+    div.c3 {
+        text-align: center;
+    }
+    li{
+        border: 1px solid #000;
+        height: 100px;
+        width: 400px;
+        font-size: 2em;
+        line-height: 100px;
+        margin: 30px;
+
+        /* 글자에 그림자 넣기 */
+        text-shadow: 5px -5px 5px red;
+        /* 박스에 그림자 넣기 */
+        box-shadow: 5px 5px 5px gray;
+
+        text-transform: lowercase;
+    }
+</style>
 </head>
+
 <body>
-    <div class="c1">웹문서에서사용할글꼴지정</div>
-    <div class="c2">지정한글꼴이없을경우에대비해두번째,세번째 글꼴까지 지정</div>
-    <div class="c3">둘이상의글꼴이름을지정할때는쉼표(,)로글꼴구분</div>
-    <ul>
-       <li>Javascript</li>
-       <li>Html</li> 
-       <li>Spring Framework</li> 
-       <li>Mybatis Framework</li> 
-    </ul>
+    
+<div class="c1">웹문서에서 사용할 글꼴 지정</div>
+<div class="c2">지정한 글꼴이 없을 경우에 대비해 두번째, 세번째 글꼴까지 지정</div>
+<div class="c3">둘이상의 글꼴 이름을 지정할 때는 쉼표(,)로 글꼴 구분</div>
+
+<ul>
+    <li>JavaScript</li>
+    <li>Html/CSS</li>
+    <li>spring framework</li>
+    <li>mybatis Framework</li>
+</ul>
+
 </body>
 </html>
+
